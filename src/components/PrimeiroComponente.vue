@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Olá Vue!</h1>
-        <p>meu nome é: {{ name }}, tenho {{ age }} anos de idade e sou {{ profissao }}</p>
+        <p>meu nome é: {{ nome }}, tenho {{ age }} anos de idade e sou {{ profissao }}</p>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
         name: 'PrimeiroComponente',
         data() {
             return {
-                name: 'Matheus',
+                nome: 'Matheus',
                 profissao: 'programador',
                 age: 27
             }
