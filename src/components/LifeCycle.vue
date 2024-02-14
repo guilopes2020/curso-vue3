@@ -16,11 +16,17 @@
             setTimeout(() => {
                 this.nome = 'Guillherme'
             }, 2000)
+            this.lifeCycle()
         },
         mounted() {
             setTimeout(() => {
                 this.nome = 'Pedro'
             }, 4000)
+        },
+        methods: {
+            lifeCycle() {
+                console.log('executou lifecycle')
+            }
         }
     }
 </script>
