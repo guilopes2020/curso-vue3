@@ -8,6 +8,9 @@
             <li>PHP</li>
             <li>Phyton</li>
         </ul>
+        <div>
+            <button @click="showEmail">{{ texto_botao }}</button>
+        </div>
         <p v-show="mostrar_email">mande uma mensagem para: {{ email }}</p>
         <p>Para acessar meu portifolio <a v-bind:href="meu_link" target="_blank">basta clicar aqui</a></p>
         <Picture />
@@ -24,9 +27,20 @@ import Picture from './Picture.vue';
         data() {
             return {
                 esta_trabalhando: true,
-                mostrar_email: true,
+                mostrar_email: false,
                 email: 'jdhfjdhfd@gmail.com',
-                meu_link: 'https://google.com'
+                meu_link: 'https://google.com',
+                texto_botao: 'mostrar email'
+            }
+        },
+        methods: {
+            showEmail() {
+                this.mostrar_email = !this.mostrar_email
+                if (!this.mostrar_email) {
+                    this.texto_botao = 'mostrar email'
+                } else {
+                    this.texto_botao = 'ocultar email'
+                }
             }
         }
     }
