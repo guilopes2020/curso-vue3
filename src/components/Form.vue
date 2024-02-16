@@ -1,11 +1,11 @@
 <template>
     <div>
-        <form action="">
+        <form action="" @submit="enviarForm($event)">
             <div>
-                <InputText />
+                <input type="text" v-model="name">
             </div>
             <div>
-                <InputText />
+                <input type="text" v-model="email">
             </div>
             <div>
                 <Submit />
@@ -22,6 +22,20 @@ import Submit from './form/Submit.vue'
         components: {
             InputText,
             Submit
+        },
+        data() {
+            return {
+                name: '',
+                email: ''
+            }
+        },
+        methods: {
+            enviarForm(e) {
+                e.preventDefault()
+                const name = this.name
+                const email = this.email
+                console.log(`o nome é ${name} e o email é ${email}`)
+            }
         }
     }
 </script>
