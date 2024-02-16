@@ -4,9 +4,11 @@
         <p v-else>estou desempregado</p>
         <p>ultilizo as seguintes tecnologias:</p>
         <ul>
-            <li>Javascript</li>
-            <li>PHP</li>
-            <li>Phyton</li>
+            <li v-for="(tecnologia, index) in tecnologias" :key="index">{{ tecnologia }}</li>
+        </ul>
+        <p>ultilizo as seguintes tecnologias para fronteend</p>
+        <ul>
+            <li v-for="tech in front_technology" :key="tech.id">{{ tech.language }}</li>
         </ul>
         <div>
             <button @click="showEmail">{{ texto_botao }}</button>
@@ -30,7 +32,17 @@ import Picture from './Picture.vue';
                 mostrar_email: false,
                 email: 'jdhfjdhfd@gmail.com',
                 meu_link: 'https://google.com',
-                texto_botao: 'mostrar email'
+                texto_botao: 'mostrar email',
+                tecnologias: [
+                    'javascript',
+                    'php',
+                    'phyton',
+                ],
+                front_technology: [
+                    {id: 1, language: 'html'},
+                    {id: 2, language: 'css'},
+                    {id: 3, language: 'vue'}
+                ]
             }
         },
         methods: {
