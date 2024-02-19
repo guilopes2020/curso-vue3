@@ -1,5 +1,7 @@
 <template>
     <div>
+        <p>{{ compEmail }}</p>
+        <p>{{ email }}</p>
         <p v-if="esta_trabalhando">Estou trabalhando no momento</p>
         <p v-else>estou desempregado</p>
         <p>ultilizo as seguintes tecnologias:</p>
@@ -26,11 +28,13 @@ import Picture from './Picture.vue';
         components: {
             Picture
         },
+        props: {
+            email: String,
+            esta_trabalhando: Boolean,
+        },
         data() {
             return {
-                esta_trabalhando: true,
                 mostrar_email: false,
-                email: 'jdhfjdhfd@gmail.com',
                 meu_link: 'https://google.com',
                 texto_botao: 'mostrar email',
                 tecnologias: [
